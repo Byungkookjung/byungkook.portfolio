@@ -8,27 +8,27 @@
 }
 
 :root {
-    /* Color Palette */
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
-    --primary-light: #818cf8;
-    --secondary: #8b5cf6;
-    --accent: #ec4899;
+    /* Color Palette - Darker Theme */
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --primary-light: #6366f1;
+    --secondary: #7c3aed;
+    --accent: #db2777;
     
     /* Text Colors */
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
     --text-light: #94a3b8;
     --text-white: #ffffff;
     
-    /* Background Colors */
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --bg-dark: #0f172a;
-    --bg-card: #ffffff;
+    /* Background Colors - Dark Theme */
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-dark: #020617;
+    --bg-card: #1e293b;
     
     /* Border & Shadow */
-    --border-color: #e2e8f0;
+    --border-color: #334155;
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -70,16 +70,17 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
     z-index: 1000;
     transition: var(--transition);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(15, 23, 42, 0.95);
     box-shadow: var(--shadow-md);
 }
 
@@ -204,7 +205,7 @@ body {
     padding: 120px 2rem 80px;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 100%);
 }
 
 .hero-background {
@@ -354,12 +355,13 @@ body {
 }
 
 .btn-primary {
-    background: white;
-    color: var(--primary);
+    background: var(--primary);
+    color: white;
     box-shadow: var(--shadow-lg);
 }
 
 .btn-primary:hover {
+    background: var(--primary-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-xl);
 }
@@ -1170,7 +1172,8 @@ section {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: white;
+        background: var(--bg-primary);
+        border-top: 1px solid var(--border-color);
         width: 100%;
         text-align: center;
         transition: 0.3s;
